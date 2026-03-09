@@ -1,25 +1,24 @@
 # Raspberry Pi Vision AI Dependencies
+# Tested on Raspberry Pi 4 (4GB+) with Raspberry Pi OS Bookworm (64-bit)
 
 # Core ML/Vision
-tflite-runtime==2.14.0
-opencv-python-headless==4.8.1.78
-numpy==1.24.3
-Pillow==10.1.0
+tflite-runtime>=2.14.0
+numpy>=1.24.3,<2.0
+Pillow>=10.1.0
 
-# ML Models (TensorFlow Lite variants)
-# For full TensorFlow on Pi 5:
-# tensorflow==2.14.0
+# OpenCV — prefer the system package (python3-opencv) on Pi 4 for
+# hardware-accelerated codecs.  Fall back to pip only if needed:
+opencv-python-headless>=4.8.0
 
-# UI/Display
-tkinter (built-in)
+# picamera2 — installed via apt (python3-picamera2) on Pi OS Bookworm.
+# Uncomment below ONLY if you need a pip-based install in a venv:
+# picamera2>=0.3.17
 
 # Utilities
-psutil==5.9.6
-scipy==1.11.4
+psutil>=5.9.6
 
-# For YOLOv8 support (optional, heavier)
-# ultralytics==8.0.200
+# For YOLOv8 support (optional, heavier — needs 4GB+ RAM)
+# ultralytics>=8.0.200
 
-# For Edge TPU (optional)
-# edgetpu==2.14.0
-# tflite-support==0.4.4
+# For Google Coral Edge TPU (optional)
+# tflite-support>=0.4.4
