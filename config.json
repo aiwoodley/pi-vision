@@ -1,0 +1,53 @@
+{
+  "project": {
+    "name": "Raspberry Pi Vision AI",
+    "version": "1.0.0",
+    "description": "Touchscreen object detection with ML"
+  },
+  "camera": {
+    "width": 640,
+    "height": 480,
+    "fps": 30,
+    "rotation": 0,
+    "brightness": 50,
+    "contrast": 50
+  },
+  "detection": {
+    "default_model": "ssd_mobilenet_v2",
+    "confidence_threshold": 0.5,
+    "max_detections": 10,
+    "overlay_alpha": 0.7
+  },
+  "models": {
+    "ssd_mobilenet_v2": {
+      "name": "SSD MobileNet V2",
+      "file": "models/ssd_mobilenet_v2_coco_quant_postprocess.tflite",
+      "labels": "models/coco_labels.txt",
+      "description": "Fast detection, good for real-time",
+      "inference_time_ms": 100
+    },
+    "efficientdet_lite0": {
+      "name": "EfficientDet-Lite0",
+      "file": "models/efficientdet_lite0.tflite",
+      "labels": "models/coco_labels.txt",
+      "description": "Better accuracy",
+      "inference_time_ms": 150
+    }
+  },
+  "display": {
+    "width": 800,
+    "height": 480,
+    "fullscreen": true,
+    "show_fps": true,
+    "show_confidence": true
+  },
+  "capture": {
+    "enabled": true,
+    "directory": "data/captures",
+    "save_annotated": true
+  },
+  "performance": {
+    "threaded": true,
+    "gpu_memory_fraction": 0.5
+  }
+}

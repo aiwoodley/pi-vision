@@ -1,0 +1,25 @@
+# Raspberry Pi Vision AI Dependencies
+
+# Core ML/Vision
+tflite-runtime==2.14.0
+opencv-python-headless==4.8.1.78
+numpy==1.24.3
+Pillow==10.1.0
+
+# ML Models (TensorFlow Lite variants)
+# For full TensorFlow on Pi 5:
+# tensorflow==2.14.0
+
+# UI/Display
+tkinter (built-in)
+
+# Utilities
+psutil==5.9.6
+scipy==1.11.4
+
+# For YOLOv8 support (optional, heavier)
+# ultralytics==8.0.200
+
+# For Edge TPU (optional)
+# edgetpu==2.14.0
+# tflite-support==0.4.4
